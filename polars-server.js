@@ -9,7 +9,7 @@ var app = express()
 app.use(express.json())
 
 const PORT = process.env.PORT || 7777
-const DDL_HOST = process.env.DDL_HOST || ""
+const HOST = process.env.HOST || ""
 
 // cors config
 var whitelist = [
@@ -34,7 +34,7 @@ app.get('/polars/:race', cors(corsOptions), function(req, res){
 
   for (var i = 0; i < 8; i++) {
     const sail = i
-    var url = `http://${DDL_HOST}/${race}/ideal_${sail}.png?2`
+    var url = `http://${HOST}/${race}/ideal_${sail}.png?2`
     http.get(url, (r) => {
       const statusCode = r.statusCode;
       if (statusCode !== 200) {
