@@ -23,6 +23,8 @@ var corsOptions = {
   }
 }
 
+app.use('/polars', express.static('polars'))
+
 app.listen(PORT, function(err){
   console.log("Running server on port "+ PORT)
 })
