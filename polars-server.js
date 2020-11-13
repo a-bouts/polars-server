@@ -58,3 +58,8 @@ app.get('/polars/:race', cors(corsOptions), function(req, res){
 
   res.status(200).end();
 })
+
+app.get('/polars/-/healthz', function(req, res){
+
+  res.json({ status: "Ok" });
+})
