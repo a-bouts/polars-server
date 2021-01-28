@@ -18,7 +18,7 @@ jobs:
       run: |
         DOCKER_IMAGE=stoub/polars-server
         DOCKER_PLATFORMS=linux/amd64,linux/arm64,linux/arm/v7
-        VERSION=${GITHUB_SHA::8}
+        VERSION=${GITHUB_REF##*/}-${GITHUB_SHA::8}
 
         if [[ $GITHUB_REF == refs/tags/* ]]; then
           VERSION=${GITHUB_REF#refs/tags/v}
